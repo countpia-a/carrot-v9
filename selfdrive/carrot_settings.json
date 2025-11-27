@@ -24,7 +24,7 @@
       "edescr": "Use Custom Torque(TorqueAccelFactor, FrictionFactor)",
       "min": 0,
       "max": 1,
-      "default": 1,
+      "default": 0,
       "unit": 1
     },
     {
@@ -50,7 +50,7 @@
       "edescr": "More fine steering at higher values — 0-50 recommended",
       "min": 0,
       "max": 1000,
-      "default": 100,
+      "default": 20,
       "unit": 10
     },
     {
@@ -115,7 +115,7 @@
       "edescr": "(LaneMode) Path Following Weight — Higher values prioritize the path",
       "min": 0,
       "max": 500,
-      "default": 200,
+      "default": 160,
       "unit": 10
     },
     {
@@ -141,7 +141,7 @@
       "edescr": "(LaneMode) Lateral Acceleration Limit — Lower values increase agility but reduce stability",
       "min": 0,
       "max": 500,
-      "default": 100,
+      "default": 150,
       "unit": 10
     },
     {
@@ -154,7 +154,7 @@
       "edescr": "(LaneMode) Lower values allow quicker steering — reduces smoothness",
       "min": 0,
       "max": 200,
-      "default": 1,
+      "default": 8,
       "unit": 1
     },
     {
@@ -167,7 +167,7 @@
       "edescr": "(LaneMode) Steering Rate Limit — Lower values make steering more aggressive",
       "min": 0,
       "max": 1000,
-      "default": 7,
+      "default": 15,
       "unit": 100
     },
     {
@@ -193,7 +193,7 @@
       "edescr": "Maximum Steering Torque — Use the largest value among 270/384/409 that does not cause errors",
       "min": 0,
       "max": 30000,
-      "default": 0,
+      "default": 240,
       "unit": 1
     },
     {
@@ -206,7 +206,7 @@
       "edescr": "Torque Vehicle — Higher values increase steering wheel turn speed",
       "min": 0,
       "max": 50,
-      "default": 0,
+      "default": 27,
       "unit": 1
     },
     {
@@ -219,7 +219,7 @@
       "edescr": "Torque Vehicle — Higher values increase steering wheel release speed",
       "min": 0,
       "max": 50,
-      "default": 0,
+      "default": 29,
       "unit": 1
     },
     {
@@ -258,7 +258,7 @@
       "edescr": "Steering Delay Value — Higher values steer earlier. 0 means Live Delay",
       "min": 0,
       "max": 300,
-      "default": 30,
+      "default": 0,
       "unit": 1
     },
     {
@@ -284,7 +284,7 @@
       "edescr": "Cruise ON when releasing the pedal and the front car gets close",
       "min": 0,
       "max": 2500,
-      "default": 0,
+      "default": 400,
       "unit": 50
     },
     {
@@ -362,7 +362,7 @@
       "edescr": "LiveSteerRatio Application Ratio (Requires CustomSR set to 0)",
       "min": 30,
       "max": 200,
-      "default": 0,
+      "default": 100,
       "unit": 1
     },
     {
@@ -388,7 +388,7 @@
       "edescr": "Acceleration from 10 km/h to 40 km/h",
       "min": 1,
       "max": 250,
-      "default": 160,
+      "default": 200,
       "unit": 5
     },
     {
@@ -401,7 +401,7 @@
       "edescr": "Acceleration from 40 km/h to 60 km/h",
       "min": 1,
       "max": 250,
-      "default": 120,
+      "default": 160,
       "unit": 5
     },
     {
@@ -414,7 +414,7 @@
       "edescr": "Acceleration from 60 km/h to 80 km/h",
       "min": 1,
       "max": 250,
-      "default": 100,
+      "default": 130,
       "unit": 5
     },
     {
@@ -427,7 +427,7 @@
       "edescr": "Acceleration from 80 km/h to 110 km/h",
       "min": 1,
       "max": 250,
-      "default": 80,
+      "default": 110,
       "unit": 5
     },
     {
@@ -440,7 +440,7 @@
       "edescr": "Acceleration from 110 km/h to 140 km/h",
       "min": 1,
       "max": 250,
-      "default": 70,
+      "default": 95,
       "unit": 5
     },
     {
@@ -453,7 +453,7 @@
       "edescr": "Acceleration from 140 km/h",
       "min": 1,
       "max": 250,
-      "default": 60,
+      "default": 80,
       "unit": 5
     },
     {
@@ -466,7 +466,7 @@
       "edescr": "Stop Distance * 0.8",
       "min": 400,
       "max": 1000,
-      "default": 600,
+      "default": 550,
       "unit": 10
     },
     {
@@ -531,7 +531,7 @@
       "edescr": "Longitudinal Feedforward Correction — HKG: 100 Recommended",
       "min": 0,
       "max": 200,
-      "default": 0,
+      "default": 100,
       "unit": 5
     },
     {
@@ -596,7 +596,7 @@
       "edescr": "Higher value: slow curve speed",
       "min": 50,
       "max": 300,
-      "default": 100,
+      "default": 120,
       "unit": 5
     },
     {
@@ -609,7 +609,7 @@
       "edescr": "Higher value: more speed down",
       "min": 50,
       "max": 300,
-      "default": 10,
+      "default": 100,
       "unit": 1
     },
     {
@@ -713,7 +713,7 @@
       "edescr": "For Non-Long Vehicle Only, Speed Button Signal Send Restriction Time",
       "min": 1,
       "max": 20,
-      "default": 0,
+      "default": 8,
       "unit": 1
     },
     {
@@ -726,7 +726,7 @@
       "edescr": "For Non-Long Vehicle Only — Speed Button Signal Send Pause Time",
       "min": 1,
       "max": 200,
-      "default": 0,
+      "default": 30,
       "unit": 1
     },
     {
@@ -739,7 +739,7 @@
       "edescr": "For Non-Long Vehicle Only — Consecutive Speed Button Signal Count",
       "min": 1,
       "max": 20,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -765,7 +765,7 @@
       "edescr": "SET/DECEL up/down speed unit(Basic unit)",
       "min": 1,
       "max": 100,
-      "default": 10,
+      "default": 5,
       "unit": 1
     },
     {
@@ -778,7 +778,7 @@
       "edescr": "Button Mode User 3, Stepwise Speed, 0: Road Speed Limit + Auto Speed Increase Offset",
       "min": 0,
       "max": 160,
-      "default": 10,
+      "default": 30,
       "unit": 10
     },
     {
@@ -791,7 +791,7 @@
       "edescr": "Button Mode User 3, Second Speed",
       "min": 1,
       "max": 160,
-      "default": 10,
+      "default": 50,
       "unit": 10
     },
     {
@@ -804,7 +804,7 @@
       "edescr": "Button Mode User 3, Third Speed",
       "min": 1,
       "max": 160,
-      "default": 10,
+      "default": 80,
       "unit": 10
     },
     {
@@ -817,7 +817,7 @@
       "edescr": "Button Mode User 3, Fourth Speed",
       "min": 1,
       "max": 160,
-      "default": 10,
+      "default": 110,
       "unit": 10
     },
     {
@@ -830,7 +830,7 @@
       "edescr": "Button Mode User 3, Fifth Speed",
       "min": 1,
       "max": 160,
-      "default": 10,
+      "default": 130,
       "unit": 10
     },
     {
@@ -843,7 +843,7 @@
       "edescr": "After Regen paddle, 0:Cruise ON, 1:Cruise Ready, 2: decel & cruise ready",
       "min": 0,
       "max": 2,
-      "default": 1,
+      "default": 0,
       "unit": 1
     },
     {
@@ -882,7 +882,7 @@
       "edescr": "1: Steering Only, 2: Steering ON + Cruise Standby",
       "min": 0,
       "max": 2,
-      "default": 0,
+      "default": 2,
       "unit": 1
     },
     {
@@ -895,7 +895,7 @@
       "edescr": "1: Standard Camera, 2: Standard Camera + Wide Camera",
       "min": 0,
       "max": 2,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -947,7 +947,7 @@
       "edescr": "0: Curve/Camera Deceleration + Long, 1: No Button Spamming (Stock SCC), 2: Curve/Camera Decel, 3: Honda/Toyota",
       "min": 0,
       "max": 3,
-      "default": 0,
+      "default": 2,
       "unit": 1
     },
     {
@@ -973,7 +973,7 @@
       "edescr": "Reboot required",
       "min": 0,
       "max": 1,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -1038,7 +1038,7 @@
       "edescr": "-1: set roadlimitspeed, 100: new road speed, 50: median, 0: not change",
       "min": -1,
       "max": 100,
-      "default": 0,
+      "default": 50,
       "unit": 10
     },
     {
@@ -1054,7 +1054,6 @@
       "default": 0,
       "unit": 1
     },
-
     {
       "group": "화면",
       "name": "ShowDebugUI",
@@ -1065,7 +1064,7 @@
       "edescr": "",
       "min": 0,
       "max": 2,
-      "default": 1,
+      "default": 0,
       "unit": 1
     },
     {
@@ -1091,7 +1090,7 @@
       "edescr": "0:None, 1:Time/Date, 2:Time, 3:Date",
       "min": 0,
       "max": 3,
-      "default": 1,
+      "default": 2,
       "unit": 1
     },
     {
@@ -1156,7 +1155,7 @@
       "edescr": "0:None,1:display,2:+relative pos, 3:stopped obstacle",
       "min": 0,
       "max": 3,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -1169,7 +1168,7 @@
       "edescr": "Operates only when connected to APN. 0: Off, 1: On",
       "min": 0,
       "max": 1,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -1195,7 +1194,7 @@
       "edescr": "(+10:stroke)0(R),1(O),2(Y),3(B),5(N),6(V),7(K),8(W),9(B),20:Auto",
       "min": 0,
       "max": 20,
-      "default": 12,
+      "default": 13,
       "unit": 1
     },
     {
@@ -1208,7 +1207,7 @@
       "edescr": "(+10:stroke)0(R),1(O),2(Y),3(B),5(N),6(V),7(K),8(W),9(B)",
       "min": 0,
       "max": 19,
-      "default": 1,
+      "default": 19,
       "unit": 1
     },
     {
@@ -1221,7 +1220,7 @@
       "edescr": "0:stock,1,2:REC,3,4:^^,5,6:REC,7,8:^^,9,10,11:smooth^^,12:smooth2^^,13:3lines,14:2lines,15:1lines",
       "min": 0,
       "max": 15,
-      "default": 11,
+      "default": 14,
       "unit": 1
     },
     {
@@ -1234,7 +1233,7 @@
       "edescr": "(+10:stroke)0(R),1(O),2(Y),3(B),5(N),6(V),7(K),8(W),9(B),20:Auto",
       "min": 0,
       "max": 20,
-      "default": 3,
+      "default": 13,
       "unit": 1
     },
     {
@@ -1364,7 +1363,7 @@
       "edescr": "1: Long-con Vehicle, 2: Cruise State Sync (CAN-FD Vehicle), 3: Stock Cruise (CANFD Long harness)",
       "min": 0,
       "max": 3,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -1416,7 +1415,7 @@
       "edescr": "-1: SCC Radar(SCC Always On), 0: SCC Radar\n, 1: Radar Track Enabled, 2: Radar Track Enabled(SCC Always On)\n 3:Radar Track Eanbled(Cutin detect and etc)",
       "min": -1,
       "max": 3,
-      "default": 0,
+      "default": 2,
       "unit": 1
     },
     {
@@ -1468,7 +1467,7 @@
       "edescr": "Turn off on memory error",
       "min": 0,
       "max": 1,
-      "default": 0,
+      "default": 1,
       "unit": 1
     },
     {
@@ -1481,7 +1480,7 @@
       "edescr": "",
       "min": 5,
       "max": 200,
-      "default": 0,
+      "default": 100,
       "unit": 5
     },
     {
@@ -1494,7 +1493,7 @@
       "edescr": "",
       "min": 5,
       "max": 200,
-      "default": 0,
+      "default": 10,
       "unit": 5
     },
     {
@@ -1572,7 +1571,7 @@
       "edescr": "Temporarily reduces the gap between vehicles when starting a lane change",
       "min": 0,
       "max": 100,
-      "default": 0,
+      "default": 100,
       "unit": 5
     },
     {
@@ -1650,7 +1649,7 @@
       "edescr": "Time until decel completes, based on speed x time",
       "min": 3,
       "max": 20,
-      "default": 6,
+      "default": 8,
       "unit": 1
     },
     {
@@ -1702,7 +1701,7 @@
       "edescr": "",
       "min": 10,
       "max": 100,
-      "default": 35,
+      "default": 30,
       "unit": 5
     },
     {
@@ -1715,7 +1714,7 @@
       "edescr": "The lower the value, the further away it decelerates.",
       "min": 50,
       "max": 300,
-      "default": 200,
+      "default": 120,
       "unit": 10
     },
     {
@@ -1741,7 +1740,7 @@
       "edescr": "0:not use, 1:vision, 2:vision+route, 3:route(always)",
       "min": 0,
       "max": 3,
-      "default": 1,
+      "default": 2,
       "unit": 1
     },
     {
@@ -1754,7 +1753,7 @@
       "edescr": "The smaller the value, the more the speed will decrease along the route.",
       "min": 50,
       "max": 300,
-      "default": 100,
+      "default": 90,
       "unit": 10
     },
     {
@@ -1780,7 +1779,7 @@
       "edescr": "Reduce speed to the road speed limit*set value at the speed camera",
       "min": 80,
       "max": 120,
-      "default": 105,
+      "default": 100,
       "unit": 1
     }
   ]
