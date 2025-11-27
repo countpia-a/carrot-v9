@@ -171,6 +171,11 @@ class LatControlTorque(LatControl):
       angle_steers_des = math.degrees(VM.get_steer_from_curvature(-desired_curvature, CS.vEgo, params.roll))
       angle_steers_des += params.angleOffsetDeg
 
+      # Apply curvature-based offset to maintain lane center in corners
+      # Positive offset pushes toward outside of turn (preventing inside cutting)
+      curvature_offset_factor = 0.15  # Adjust this value to tune corner centering (0.1-0.3 recommended)
+      angle_steers_des += desired_curvature * CS.vEgo * curvature_offset_factor
+
       actual_curvature_vm = -VM.calc_curvature(math.radians(CS.steeringAngleDeg - params.angleOffsetDeg), CS.vEgo, params.roll)
       roll_compensation = params.roll * ACCELERATION_DUE_TO_GRAVITY
       actual_lateral_jerk = 0.0
