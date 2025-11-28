@@ -191,10 +191,12 @@ class LatControlTorque(LatControl):
       actual_lateral_accel = actual_curvature * CS.vEgo ** 2
       lateral_accel_deadzone = curvature_deadzone * CS.vEgo ** 2
 
-      low_speed_factor = np.interp(CS.vEgo, LOW_SPEED_X, LOW_SPEED_Y)**2
-      setpoint = desired_lateral_accel + low_speed_factor * desired_curvature
-      measurement = actual_lateral_accel + low_speed_factor * actual_curvature
-      
+      lateral_accel_deadzone = curvature_deadzone * CS.vEgo ** 2
+
+      low_speed_factor = np.interp(CS.vEgo, LOW_SPEED_X, LOW_SPEED_Y)**2 / max(CS.vEgo, 1.0)**2
+      setpoint = desired_lateral_accel
+      measurement = actual_lateral_accel
+
       lateral_jerk_setpoint = 0
       lateral_jerk_measurement = 0
       lookahead_lateral_jerk = 0
@@ -238,13 +240,11 @@ class LatControlTorque(LatControl):
                               + [setpoint] * self.past_future_len \
                               + past_rolls + future_rolls
         # past lateral accel error shouldn't count, so use past desired like the setpoint input
-        nnff_measurement_input = [CS.vEgo, measurement, lateral_jerk_measurement, roll] \
-                                 + [measurement] * self.past_future_len \
-                                 + past_rolls + future_rolls
         torque_from_setpoint = self.torque_from_nn(nnff_setpoint_input)
         torque_from_measurement = self.torque_from_nn(nnff_measurement_input)
 
         pid_log.error = float(torque_from_setpoint - torque_from_measurement)
+        pid_log.error += low_speed_factor / max(self.torque_params.kp, 1e-3) * pid_log.error
         error_blend_factor = np.interp(abs(desired_lateral_accel), [1.0, 2.0], [0.0, 1.0])
         if error_blend_factor > 0.0:  # blend in stronger error response when in high lat accel
           nnff_error_input = [CS.vEgo, setpoint - measurement, lateral_jerk_setpoint - lateral_jerk_measurement, 0.0]
@@ -273,6 +273,7 @@ class LatControlTorque(LatControl):
         torque_from_measurement = self.torque_from_lateral_accel(LatControlInputs(measurement, roll_compensation, CS.vEgo, CS.aEgo), self.torque_params,
                                                                  lateral_jerk_measurement, lateral_accel_deadzone, friction_compensation=self.use_nnff_lite, gravity_adjusted=False)
         pid_log.error = float(torque_from_setpoint - torque_from_measurement)
+        pid_log.error += low_speed_factor / max(self.torque_params.kp, 1e-3) * pid_log.error
         error = desired_lateral_accel - actual_lateral_accel
         if self.use_nnff_lite:
           friction_input = self.lat_accel_friction_factor * error + self.lat_jerk_friction_factor * lookahead_lateral_jerk
